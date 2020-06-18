@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
 const api = {
@@ -46,20 +46,15 @@ function App() {
       .get(url)
       .then(response => {
         setSearchTerm("");
-        console.log(response.data);
         setWeatherData(response.data);
       })
       .catch(error => {
         console.log(error);
       });
   };
-  useEffect(() => {
-    callApi();
-    console.log(weatherData);
-  }, []);
 
   const handleChange = event => {
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
       callApi();
       console.log(weatherData);
     }
