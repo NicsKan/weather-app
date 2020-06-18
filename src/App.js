@@ -40,12 +40,6 @@ function App() {
 
     return `${day} ${date} ${month} ${year}`;
   };
-
-  useEffect(() => {
-    callApi();
-    console.log(weatherData);
-  }, []);
-
   const callApi = () => {
     const url = `${api.baseUrl}weather?q=${searchTerm}&units=metric&appid=${api.key}`;
     axios
@@ -59,6 +53,10 @@ function App() {
         console.log(error);
       });
   };
+  useEffect(() => {
+    callApi();
+    console.log(weatherData);
+  }, []);
 
   const handleChange = event => {
     if (event.key == "Enter") {
