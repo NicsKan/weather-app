@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import { seagreen } from "color-name";
 const api = {
   key: "01a18f783dfb10d31e3d07e7caed2a38",
   baseUrl: "https://api.openweathermap.org/data/2.5/"
